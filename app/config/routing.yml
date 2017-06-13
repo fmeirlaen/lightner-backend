@@ -1,0 +1,5 @@
+tf_api:
+    resource: "@TFApiBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
