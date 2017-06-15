@@ -15,11 +15,17 @@ class tab_header_doc
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="stamptab_header_doc", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $stamptab_header_doc;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_contact")
+     * @ORM\JoinColumn(name="stamptab_contact", referencedColumnName="stamptab_contact")
+     */
+    private $tab_contact;
 
     /**
      * @var string
@@ -59,7 +65,7 @@ class tab_header_doc
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="doc_date_paid", type="date")
+     * @ORM\Column(name="doc_date_paid", type="date", nullable=true)
      */
     private $docDatePaid;
 
@@ -80,9 +86,9 @@ class tab_header_doc
     /**
      * @var bool
      *
-     * @ORM\Column(name="doc_paied", type="boolean")
+     * @ORM\Column(name="doc_paid", type="boolean")
      */
-    private $docPaied;
+    private $docPaid;
 
     /**
      * @var string
@@ -119,16 +125,6 @@ class tab_header_doc
      */
     private $contactCity;
 
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set contactName
@@ -323,27 +319,27 @@ class tab_header_doc
     }
 
     /**
-     * Set docPaied
+     * Set docPaid
      *
-     * @param boolean $docPaied
+     * @param boolean $docPaid
      *
      * @return tab_header_doc
      */
-    public function setDocPaied($docPaied)
+    public function setDocPaid($docPaid)
     {
-        $this->docPaied = $docPaied;
+        $this->docPaid = $docPaid;
 
         return $this;
     }
 
     /**
-     * Get docPaied
+     * Get docPaid
      *
      * @return bool
      */
-    public function getDocPaied()
+    public function getDocPaid()
     {
-        return $this->docPaied;
+        return $this->docPaid;
     }
 
     /**
@@ -464,6 +460,14 @@ class tab_header_doc
     public function getContactCity()
     {
         return $this->contactCity;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStamptabHeaderDoc()
+    {
+        return $this->stamptab_header_doc;
     }
 }
 

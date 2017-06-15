@@ -15,11 +15,11 @@ class tab_user
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="stamptab_contact", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
-    private $id;
+    private $stamptab_contact;
 
     /**
      * @var int
@@ -48,17 +48,6 @@ class tab_user
      * @ORM\Column(name="user_image", type="string", length=255)
      */
     private $userImage;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set userId
@@ -154,6 +143,22 @@ class tab_user
     public function getUserImage()
     {
         return $this->userImage;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStamptabContact()
+    {
+        return $this->stamptab_contact;
+    }
+
+    /**
+     * @param int $stamptab_contact
+     */
+    public function setStamptabContact($stamptab_contact)
+    {
+        $this->stamptab_contact = $stamptab_contact;
     }
 }
 

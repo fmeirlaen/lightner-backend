@@ -15,11 +15,11 @@ class tab_country
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="stamptab_country", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $stamptab_country;
 
     /**
      * @var string

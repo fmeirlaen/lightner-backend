@@ -15,12 +15,23 @@ class tab_contact
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="stamptab_contact", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    private $stamptab_contact;
 
+    /**
+     * @ORM\OneToOne(targetEntity="TF\ApiBundle\Entity\tab_user")
+     * @ORM\JoinColumn(name="stamptab_contact", referencedColumnName="stamptab_contact")
+     */
+    private $tab_user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
+     * @ORM\JoinColumn(name="stamptab_country", referencedColumnName="stamptab_country")
+     */
+    private $stamptab_country;
     /**
      * @var int
      *
@@ -87,9 +98,9 @@ class tab_contact
     /**
      * @var string
      *
-     * @ORM\Column(name="contact_amout", type="decimal", precision=10, scale=2, nullable=true)
+     * @ORM\Column(name="contact_amount", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $contactAmout;
+    private $contactAmount;
 
     /**
      * @var string
@@ -111,9 +122,9 @@ class tab_contact
      *
      * @return int
      */
-    public function getId()
+    public function getStamptab_contact()
     {
-        return $this->id;
+        return $this->stamptab_contact;
     }
 
     /**
@@ -333,33 +344,33 @@ class tab_contact
     }
 
     /**
-     * Set contactAmout
+     * Set contactAmount
      *
-     * @param string $contactAmout
+     * @param string $contactAmount
      *
      * @return tab_contact
      */
-    public function setContactAmout($contactAmout)
+    public function setContactAmount($contactAmount)
     {
-        $this->contactAmout = $contactAmout;
+        $this->contactAmount = $contactAmount;
 
         return $this;
     }
 
     /**
-     * Get contactAmout
+     * Get contactAmount
      *
      * @return string
      */
-    public function getContactAmout()
+    public function getContactAmount()
     {
-        return $this->contactAmout;
+        return $this->contactAmount;
     }
 
     /**
      * Set contactTabVat
      *
-     * @param string $contactTabVat
+     * @param integer $contactTabVat
      *
      * @return tab_contact
      */
@@ -373,7 +384,7 @@ class tab_contact
     /**
      * Get contactTabVat
      *
-     * @return string
+     * @return int
      */
     public function getContactTabVat()
     {
@@ -402,6 +413,22 @@ class tab_contact
     public function getContactDateCreation()
     {
         return $this->contactDateCreation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTabUser()
+    {
+        return $this->tab_user;
+    }
+
+    /**
+     * @param mixed $tab_user
+     */
+    public function setTabUser($tab_user)
+    {
+        $this->tab_user = $tab_user;
     }
 }
 
