@@ -3,6 +3,7 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Type as Type;
 
 /**
  * tab_header_doc
@@ -30,100 +31,128 @@ class tab_header_doc
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_name", type="string", length=100)
      */
-    private $contactName;
+    private $contact_name;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_address", type="string", length=100)
      */
-    private $contactAddress;
+    private $contact_address;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_codpost", type="string", length=50, nullable=true)
      */
-    private $contactCodpost;
+    private $contact_codpost;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_country", type="string", length=45, nullable=true)
      */
-    private $contactCountry;
+    private $contact_country;
 
     /**
      * @var \DateTime
+     *
+     * @Type("DateTime<'Y-m-d H:i:s'>")
      *
      * @ORM\Column(name="doc_date", type="date")
      */
-    private $docDate;
+    private $doc_date;
 
     /**
      * @var \DateTime
      *
+     * @Type("DateTime<'Y-m-d H:i:s'>")
+     *
      * @ORM\Column(name="doc_date_paid", type="date", nullable=true)
      */
-    private $docDatePaid;
+    private $doc_date_paid;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="doc_reference", type="string", length=100, nullable=true)
      */
-    private $docReference;
+    private $doc_reference;
 
     /**
      * @var string
      *
+     * @Type("float")
+     *
      * @ORM\Column(name="doc_total", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $docTotal;
+    private $doc_total;
 
     /**
      * @var bool
      *
+     * @Type("boolean")
+     *
      * @ORM\Column(name="doc_paid", type="boolean")
      */
-    private $docPaid;
+    private $doc_paid;
 
     /**
      * @var string
+     *
+     * @Type("float")
      *
      * @ORM\Column(name="doc_total_vat", type="decimal", precision=10, scale=2)
      */
-    private $docTotalVat;
+    private $doc_total_vat;
 
     /**
      * @var int
+     *
+     * @Type("int")
      *
      * @ORM\Column(name="doc_number", type="integer")
      */
-    private $docNumber;
+    private $doc_number;
 
     /**
      * @var int
      *
+     * @Type("int")
+     *
      * @ORM\Column(name="doc_year", type="integer")
      */
-    private $docYear;
+    private $doc_year;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="doc_type", type="string", length=60)
      */
-    private $docType;
+    private $doc_type;
 
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_city", type="string", length=50, nullable=true)
      */
-    private $contactCity;
+    private $contact_city;
 
 
     /**
@@ -135,7 +164,7 @@ class tab_header_doc
      */
     public function setContactName($contactName)
     {
-        $this->contactName = $contactName;
+        $this->contact_name = $contactName;
 
         return $this;
     }
@@ -147,7 +176,7 @@ class tab_header_doc
      */
     public function getContactName()
     {
-        return $this->contactName;
+        return $this->contact_name;
     }
 
     /**
@@ -159,7 +188,7 @@ class tab_header_doc
      */
     public function setContactAddress($contactAddress)
     {
-        $this->contactAddress = $contactAddress;
+        $this->contact_address = $contactAddress;
 
         return $this;
     }
@@ -171,7 +200,7 @@ class tab_header_doc
      */
     public function getContactAddress()
     {
-        return $this->contactAddress;
+        return $this->contact_address;
     }
 
     /**
@@ -183,7 +212,7 @@ class tab_header_doc
      */
     public function setContactCodpost($contactCodpost)
     {
-        $this->contactCodpost = $contactCodpost;
+        $this->contact_codpost = $contactCodpost;
 
         return $this;
     }
@@ -195,7 +224,7 @@ class tab_header_doc
      */
     public function getContactCodpost()
     {
-        return $this->contactCodpost;
+        return $this->contact_codpost;
     }
 
     /**
@@ -207,7 +236,7 @@ class tab_header_doc
      */
     public function setContactCountry($contactCountry)
     {
-        $this->contactCountry = $contactCountry;
+        $this->contact_country = $contactCountry;
 
         return $this;
     }
@@ -219,7 +248,7 @@ class tab_header_doc
      */
     public function getContactCountry()
     {
-        return $this->contactCountry;
+        return $this->contact_country;
     }
 
     /**
@@ -231,7 +260,7 @@ class tab_header_doc
      */
     public function setDocDate($docDate)
     {
-        $this->docDate = $docDate;
+        $this->doc_date = $docDate;
 
         return $this;
     }
@@ -243,7 +272,7 @@ class tab_header_doc
      */
     public function getDocDate()
     {
-        return $this->docDate;
+        return $this->doc_date;
     }
 
     /**
@@ -255,7 +284,7 @@ class tab_header_doc
      */
     public function setDocDatePaid($docDatePaid)
     {
-        $this->docDatePaid = $docDatePaid;
+        $this->doc_date_paid = $docDatePaid;
 
         return $this;
     }
@@ -267,7 +296,7 @@ class tab_header_doc
      */
     public function getDocDatePaid()
     {
-        return $this->docDatePaid;
+        return $this->doc_date_paid;
     }
 
     /**
@@ -279,7 +308,7 @@ class tab_header_doc
      */
     public function setDocReference($docReference)
     {
-        $this->docReference = $docReference;
+        $this->doc_reference = $docReference;
 
         return $this;
     }
@@ -291,7 +320,7 @@ class tab_header_doc
      */
     public function getDocReference()
     {
-        return $this->docReference;
+        return $this->doc_reference;
     }
 
     /**
@@ -303,7 +332,7 @@ class tab_header_doc
      */
     public function setDocTotal($docTotal)
     {
-        $this->docTotal = $docTotal;
+        $this->doc_total = $docTotal;
 
         return $this;
     }
@@ -315,7 +344,7 @@ class tab_header_doc
      */
     public function getDocTotal()
     {
-        return $this->docTotal;
+        return $this->doc_total;
     }
 
     /**
@@ -327,7 +356,7 @@ class tab_header_doc
      */
     public function setDocPaid($docPaid)
     {
-        $this->docPaid = $docPaid;
+        $this->doc_paid = $docPaid;
 
         return $this;
     }
@@ -339,7 +368,7 @@ class tab_header_doc
      */
     public function getDocPaid()
     {
-        return $this->docPaid;
+        return $this->doc_paid;
     }
 
     /**
@@ -351,7 +380,7 @@ class tab_header_doc
      */
     public function setDocTotalVat($docTotalVat)
     {
-        $this->docTotalVat = $docTotalVat;
+        $this->doc_total_vat = $docTotalVat;
 
         return $this;
     }
@@ -363,7 +392,7 @@ class tab_header_doc
      */
     public function getDocTotalVat()
     {
-        return $this->docTotalVat;
+        return $this->doc_total_vat;
     }
 
     /**
@@ -375,7 +404,7 @@ class tab_header_doc
      */
     public function setDocNumber($docNumber)
     {
-        $this->docNumber = $docNumber;
+        $this->doc_number = $docNumber;
 
         return $this;
     }
@@ -387,7 +416,7 @@ class tab_header_doc
      */
     public function getDocNumber()
     {
-        return $this->docNumber;
+        return $this->doc_number;
     }
 
     /**
@@ -399,7 +428,7 @@ class tab_header_doc
      */
     public function setDocYear($docYear)
     {
-        $this->docYear = $docYear;
+        $this->doc_year = $docYear;
 
         return $this;
     }
@@ -411,7 +440,7 @@ class tab_header_doc
      */
     public function getDocYear()
     {
-        return $this->docYear;
+        return $this->doc_year;
     }
 
     /**
@@ -423,7 +452,7 @@ class tab_header_doc
      */
     public function setDocType($docType)
     {
-        $this->docType = $docType;
+        $this->doc_type = $docType;
 
         return $this;
     }
@@ -435,7 +464,7 @@ class tab_header_doc
      */
     public function getDocType()
     {
-        return $this->docType;
+        return $this->doc_type;
     }
 
     /**
@@ -447,7 +476,7 @@ class tab_header_doc
      */
     public function setContactCity($contactCity)
     {
-        $this->contactCity = $contactCity;
+        $this->contact_city = $contactCity;
 
         return $this;
     }
@@ -459,7 +488,7 @@ class tab_header_doc
      */
     public function getContactCity()
     {
-        return $this->contactCity;
+        return $this->contact_city;
     }
 
     /**

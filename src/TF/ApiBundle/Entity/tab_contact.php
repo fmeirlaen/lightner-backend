@@ -22,11 +22,7 @@ class tab_contact
      */
     private $stamptab_contact;
 
-    /**
-     * @ORM\OneToOne(targetEntity="TF\ApiBundle\Entity\tab_user")
-     * @ORM\JoinColumn(name="stamptab_contact", referencedColumnName="stamptab_contact")
-     */
-    private $tab_user;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
@@ -35,6 +31,8 @@ class tab_contact
     private $stamptab_country;
     /**
      * @var int
+     *
+     * @Type("int")
      *
      * @ORM\Column(name="contact_number", type="integer", unique=true)
      */
@@ -61,12 +59,16 @@ class tab_contact
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_comercial_name", type="string", length=100, nullable=true)
      */
     private $contact_comercial_name;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_address", type="string", length=255, nullable=true)
      */
@@ -75,12 +77,16 @@ class tab_contact
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_codpost", type="string", length=50, nullable=true)
      */
     private $contact_codpost;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_city", type="string", length=45, nullable=true)
      */
@@ -89,12 +95,16 @@ class tab_contact
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_type", type="string", length=50)
      */
     private $contact_type;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="contact_vat_number", type="string", length=50, nullable=true)
      */
@@ -103,6 +113,8 @@ class tab_contact
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_amount", type="decimal", precision=10, scale=2, nullable=true)
      */
     private $contact_amount;
@@ -110,12 +122,16 @@ class tab_contact
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_tab_vat", type="string", length=50, nullable=true)
      */
     private $contact_tab_vat;
 
     /**
      * @var \DateTime
+     *
+     * @Type("DateTime<'Y-m-d H:i:s'>")
      *
      * @ORM\Column(name="contact_date_creation", type="datetime")
      */
@@ -357,7 +373,7 @@ class tab_contact
      */
     public function setContactAmount($contactAmount)
     {
-        $this->contactAmount = $contactAmount;
+        $this->contact_amount = $contactAmount;
 
         return $this;
     }
@@ -369,7 +385,7 @@ class tab_contact
      */
     public function getContactAmount()
     {
-        return $this->contactAmount;
+        return $this->contact_amount;
     }
 
     /**
@@ -393,7 +409,7 @@ class tab_contact
      */
     public function getContactTabVat()
     {
-        return $this->contactTabVat;
+        return $this->contact_tab_vat;
     }
 
     /**
@@ -405,7 +421,7 @@ class tab_contact
      */
     public function setContactDateCreation($contactDateCreation)
     {
-        $this->contactDateCreation = $contactDateCreation;
+        $this->contact_date_creation = $contactDateCreation;
 
         return $this;
     }
@@ -417,23 +433,9 @@ class tab_contact
      */
     public function getContactDateCreation()
     {
-        return $this->contactDateCreation;
+        return $this->contact_date_creation;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTabUser()
-    {
-        return $this->tab_user;
-    }
 
-    /**
-     * @param mixed $tab_user
-     */
-    public function setTabUser($tab_user)
-    {
-        $this->tab_user = $tab_user;
-    }
 }
 

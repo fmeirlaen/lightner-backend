@@ -1,3 +1,10 @@
-rest_user_api:
+rest_contacts_api:
     resource: \TF\ApiBundle\Controller\ContactApiController
     type: rest
+
+rest_doc_api:
+    resource: \TF\ApiBundle\Controller\DocApiController
+    type: rest
+
+
+

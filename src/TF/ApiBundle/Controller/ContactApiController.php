@@ -6,7 +6,6 @@ use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
 use TF\ApiBundle\Entity\tab_contact;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use JMS\SerializerBundle\JMSSerializerBundle ;
 use JMS\Serializer\SerializerBuilder as JMS;
 
 

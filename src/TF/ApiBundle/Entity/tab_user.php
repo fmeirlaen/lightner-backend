@@ -22,6 +22,12 @@ class tab_user
     private $stamptab_contact;
 
     /**
+     * @ORM\OneToOne(targetEntity="TF\ApiBundle\Entity\tab_contact")
+     * @ORM\JoinColumn(name="stamptab_contact", referencedColumnName="stamptab_contact")
+     */
+    private $tab_contact;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="user_id", type="integer")
@@ -159,6 +165,22 @@ class tab_user
     public function setStamptabContact($stamptab_contact)
     {
         $this->stamptab_contact = $stamptab_contact;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTabContact()
+    {
+        return $this->tab_contact;
+    }
+
+    /**
+     * @param mixed $tab_contact
+     */
+    public function setTabContact($tab_contact)
+    {
+        $this->tab_contact = $tab_contact;
     }
 }
 

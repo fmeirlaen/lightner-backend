@@ -3,6 +3,7 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Type as Type;
 
 /**
  * tab_line_doc
@@ -30,79 +31,101 @@ class tab_line_doc
     /**
      * @var \DateTime
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="line_date", type="datetime", nullable=true)
      */
-    private $lineDate;
+    private $line_date;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="line_cod", type="string", length=150, nullable=true)
      */
-    private $lineCod;
+    private $line_cod;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="line_description", type="string", length=200)
      */
-    private $lineDescription;
+    private $line_description;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="line_qtt", type="decimal", precision=10, scale=2)
      */
-    private $lineQtt;
+    private $line_qtt;
 
     /**
      * @var string
+     *
+     * @Type("string")
      *
      * @ORM\Column(name="line_unit", type="string", length=4, nullable=true)
      */
-    private $lineUnit;
+    private $line_unit;
 
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="line_price_unit", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $linePriceUnit;
+    private $line_price_unit;
 
     /**
      * @var int
      *
+     * @Type("int")
+     *
      * @ORM\Column(name="line_disc1", type="integer", nullable=true)
      */
-    private $lineDisc1;
+    private $line_disc1;
 
     /**
      * @var float
      *
+     * @Type("float")
+     *
      * @ORM\Column(name="line_vat", type="float", nullable=true)
      */
-    private $lineVat;
+    private $line_vat;
 
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="line_total", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $lineTotal;
+    private $line_total;
 
     /**
      * @var int
      *
+     * @Type("int")
+     *
      * @ORM\Column(name="line_order", type="integer", nullable=true)
      */
-    private $lineOrder;
+    private $line_order;
 
     /**
      * @var \DateTime
      *
+     * @Type("DateTime<'Y-m-d H:i:s'>")
+     *
      * @ORM\Column(name="line_delivery_date", type="date", nullable=true)
      */
-    private $lineDeliveryDate;
+    private $line_delivery_date;
 
 
     /**
@@ -110,9 +133,9 @@ class tab_line_doc
      *
      * @return int
      */
-    public function getId()
+    public function getStamptab_line_doc()
     {
-        return $this->id;
+        return $this->stamptab_line_doc;
     }
 
     /**
@@ -124,7 +147,7 @@ class tab_line_doc
      */
     public function setLineDate($lineDate)
     {
-        $this->lineDate = $lineDate;
+        $this->line_date = $lineDate;
 
         return $this;
     }
@@ -136,7 +159,7 @@ class tab_line_doc
      */
     public function getLineDate()
     {
-        return $this->lineDate;
+        return $this->line_date;
     }
 
     /**
@@ -148,7 +171,7 @@ class tab_line_doc
      */
     public function setLineCod($lineCod)
     {
-        $this->lineCod = $lineCod;
+        $this->line_cod = $lineCod;
 
         return $this;
     }
@@ -160,7 +183,7 @@ class tab_line_doc
      */
     public function getLineCod()
     {
-        return $this->lineCod;
+        return $this->line_cod;
     }
 
     /**
@@ -172,7 +195,7 @@ class tab_line_doc
      */
     public function setLineDescription($lineDescription)
     {
-        $this->lineDescription = $lineDescription;
+        $this->line_description = $lineDescription;
 
         return $this;
     }
@@ -184,7 +207,7 @@ class tab_line_doc
      */
     public function getLineDescription()
     {
-        return $this->lineDescription;
+        return $this->line_description;
     }
 
     /**
@@ -196,7 +219,7 @@ class tab_line_doc
      */
     public function setLineQtt($lineQtt)
     {
-        $this->lineQtt = $lineQtt;
+        $this->line_qtt = $lineQtt;
 
         return $this;
     }
@@ -208,7 +231,7 @@ class tab_line_doc
      */
     public function getLineQtt()
     {
-        return $this->lineQtt;
+        return $this->line_qtt;
     }
 
     /**
@@ -220,7 +243,7 @@ class tab_line_doc
      */
     public function setLineUnit($lineUnit)
     {
-        $this->lineUnit = $lineUnit;
+        $this->line_unit = $lineUnit;
 
         return $this;
     }
@@ -232,7 +255,7 @@ class tab_line_doc
      */
     public function getLineUnit()
     {
-        return $this->lineUnit;
+        return $this->line_unit;
     }
 
     /**
@@ -244,7 +267,7 @@ class tab_line_doc
      */
     public function setLinePriceUnit($linePriceUnit)
     {
-        $this->linePriceUnit = $linePriceUnit;
+        $this->line_price_unit = $linePriceUnit;
 
         return $this;
     }
@@ -256,7 +279,7 @@ class tab_line_doc
      */
     public function getLinePriceUnit()
     {
-        return $this->linePriceUnit;
+        return $this->line_price_unit;
     }
 
     /**
@@ -268,7 +291,7 @@ class tab_line_doc
      */
     public function setLineDisc1($lineDisc1)
     {
-        $this->lineDisc1 = $lineDisc1;
+        $this->line_disc1 = $lineDisc1;
 
         return $this;
     }
@@ -280,7 +303,7 @@ class tab_line_doc
      */
     public function getLineDisc1()
     {
-        return $this->lineDisc1;
+        return $this->line_disc1;
     }
 
     /**
@@ -292,7 +315,7 @@ class tab_line_doc
      */
     public function setLineVat($lineVat)
     {
-        $this->lineVat = $lineVat;
+        $this->line_vat = $lineVat;
 
         return $this;
     }
@@ -304,7 +327,7 @@ class tab_line_doc
      */
     public function getLineVat()
     {
-        return $this->lineVat;
+        return $this->line_vat;
     }
 
     /**
@@ -316,7 +339,7 @@ class tab_line_doc
      */
     public function setLineTotal($lineTotal)
     {
-        $this->lineTotal = $lineTotal;
+        $this->line_total = $lineTotal;
 
         return $this;
     }
@@ -328,7 +351,7 @@ class tab_line_doc
      */
     public function getLineTotal()
     {
-        return $this->lineTotal;
+        return $this->line_total;
     }
 
     /**
@@ -340,7 +363,7 @@ class tab_line_doc
      */
     public function setLineOrder($lineOrder)
     {
-        $this->lineOrder = $lineOrder;
+        $this->line_order = $lineOrder;
 
         return $this;
     }
@@ -352,7 +375,7 @@ class tab_line_doc
      */
     public function getLineOrder()
     {
-        return $this->lineOrder;
+        return $this->line_order;
     }
 
     /**
@@ -364,7 +387,7 @@ class tab_line_doc
      */
     public function setLineDeliveryDate($lineDeliveryDate)
     {
-        $this->lineDeliveryDate = $lineDeliveryDate;
+        $this->line_delivery_date = $lineDeliveryDate;
 
         return $this;
     }
@@ -376,7 +399,7 @@ class tab_line_doc
      */
     public function getLineDeliveryDate()
     {
-        return $this->lineDeliveryDate;
+        return $this->line_delivery_date;
     }
 
     /**
