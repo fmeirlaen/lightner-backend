@@ -38,7 +38,7 @@ class tab_contact
      *
      * @ORM\Column(name="contact_number", type="integer", unique=true)
      */
-    private $contactNumber;
+    private $contact_number;
 
     /**
      * @var string
@@ -63,63 +63,63 @@ class tab_contact
      *
      * @ORM\Column(name="contact_comercial_name", type="string", length=100, nullable=true)
      */
-    private $contactComercialName;
+    private $contact_comercial_name;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_address", type="string", length=255, nullable=true)
      */
-    private $contactAddress;
+    private $contact_address;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_codpost", type="string", length=50, nullable=true)
      */
-    private $contactCodpost;
+    private $contact_codpost;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_city", type="string", length=45, nullable=true)
      */
-    private $contactCity;
+    private $contact_city;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_type", type="string", length=50)
      */
-    private $contactType;
+    private $contact_type;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_vat_number", type="string", length=50, nullable=true)
      */
-    private $contactVatNumber;
+    private $contact_vat_number;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_amount", type="decimal", precision=10, scale=2, nullable=true)
      */
-    private $contactAmount;
+    private $contact_amount;
 
     /**
      * @var string
      *
      * @ORM\Column(name="contact_tab_vat", type="string", length=50, nullable=true)
      */
-    private $contactTabVat;
+    private $contact_tab_vat;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="contact_date_creation", type="datetime")
      */
-    private $contactDateCreation;
+    private $contact_date_creation;
 
 
     /**
@@ -141,7 +141,7 @@ class tab_contact
      */
     public function setContactNumber($contactNumber)
     {
-        $this->contactNumber = $contactNumber;
+        $this->contact_number = $contactNumber;
 
         return $this;
     }
@@ -153,7 +153,7 @@ class tab_contact
      */
     public function getContactNumber()
     {
-        return $this->contactNumber;
+        return $this->contact_number;
     }
 
     /**
@@ -189,7 +189,7 @@ class tab_contact
      */
     public function setContactLsName($contactLsName)
     {
-        $this->contact_ls_nameame = $contactLsName;
+        $this->contact_ls_name = $contactLsName;
 
         return $this;
     }
@@ -213,7 +213,7 @@ class tab_contact
      */
     public function setContactComercialName($contactComercialName)
     {
-        $this->contactComercialName = $contactComercialName;
+        $this->contact_comercial_name = $contactComercialName;
 
         return $this;
     }
@@ -225,7 +225,7 @@ class tab_contact
      */
     public function getContactComercialName()
     {
-        return $this->contactComercialName;
+        return $this->contact_comercial_name;
     }
 
     /**
@@ -237,7 +237,7 @@ class tab_contact
      */
     public function setContactAddress($contactAddress)
     {
-        $this->contactAddress = $contactAddress;
+        $this->contact_address = $contactAddress;
 
         return $this;
     }
@@ -249,7 +249,7 @@ class tab_contact
      */
     public function getContactAddress()
     {
-        return $this->contactAddress;
+        return $this->contact_address;
     }
 
     /**
@@ -261,7 +261,7 @@ class tab_contact
      */
     public function setContactCodpost($contactCodpost)
     {
-        $this->contactCodpost = $contactCodpost;
+        $this->contact_codpost = $contactCodpost;
 
         return $this;
     }
@@ -273,7 +273,7 @@ class tab_contact
      */
     public function getContactCodpost()
     {
-        return $this->contactCodpost;
+        return $this->contact_codpost;
     }
 
     /**
@@ -285,7 +285,7 @@ class tab_contact
      */
     public function setContactCity($contactCity)
     {
-        $this->contactCity = $contactCity;
+        $this->contact_city = $contactCity;
 
         return $this;
     }
@@ -297,7 +297,7 @@ class tab_contact
      */
     public function getContactCity()
     {
-        return $this->contactCity;
+        return $this->contact_city;
     }
 
     /**
@@ -309,7 +309,7 @@ class tab_contact
      */
     public function setContactType($contactType)
     {
-        $this->contactType = $contactType;
+        $this->contact_type = $contactType;
 
         return $this;
     }
@@ -321,7 +321,7 @@ class tab_contact
      */
     public function getContactType()
     {
-        return $this->contactType;
+        return $this->contact_type;
     }
 
     /**
@@ -333,7 +333,7 @@ class tab_contact
      */
     public function setContactVatNumber($contactVatNumber)
     {
-        $this->contactVatNumber = $contactVatNumber;
+        $this->contact_vat_number = $contactVatNumber;
 
         return $this;
     }
@@ -345,7 +345,7 @@ class tab_contact
      */
     public function getContactVatNumber()
     {
-        return $this->contactVatNumber;
+        return $this->contact_vat_number;
     }
 
     /**

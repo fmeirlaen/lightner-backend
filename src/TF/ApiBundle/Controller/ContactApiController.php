@@ -12,18 +12,6 @@ use JMS\Serializer\SerializerBuilder as JMS;
 
 class ContactApiController extends FOSRestController
 {
-//    private function serialize($data)
-//    {
-//        return $this->container->get('jms_serializer')
-//            ->serialize($data, 'json');
-//    }
-//
-//    private function deserialize($data)
-//    {
-//        return $this->container->get('jms_serializer')
-//            ->deserialize($data,'object','json');
-//    }
-
     /**
      * @Rest\View()
      */

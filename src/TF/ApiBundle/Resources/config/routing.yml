@@ -1,4 +1,3 @@
-
 rest_user_api:
     resource: \TF\ApiBundle\Controller\ContactApiController
     type: rest
