@@ -1,4 +1,4 @@
+
 rest_user_api:
-    prefix: /api
-    resource: \TF\ApiBundle\Controller\UserApiController
+    resource: \TF\ApiBundle\Controller\ContactApiController
     type: rest

@@ -3,6 +3,7 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Type as Type;
 
 /**
  * tab_contact
@@ -43,15 +44,19 @@ class tab_contact
      * @var string
      *
      * @ORM\Column(name="contact_fs_name", type="string", length=50)
+     *
+     * @Type("string")
      */
-    private $contactFsName;
+    private $contact_fs_name;
 
     /**
      * @var string
      *
+     * @Type("string")
+     *
      * @ORM\Column(name="contact_ls_name", type="string", length=50)
      */
-    private $contactLsName;
+    private $contact_ls_name;
 
     /**
      * @var string
@@ -160,7 +165,7 @@ class tab_contact
      */
     public function setContactFsName($contactFsName)
     {
-        $this->contactFsName = $contactFsName;
+        $this->contact_fs_name = $contactFsName;
 
         return $this;
     }
@@ -172,7 +177,7 @@ class tab_contact
      */
     public function getContactFsName()
     {
-        return $this->contactFsName;
+        return $this->contact_fs_name;
     }
 
     /**
@@ -184,7 +189,7 @@ class tab_contact
      */
     public function setContactLsName($contactLsName)
     {
-        $this->contactLsName = $contactLsName;
+        $this->contact_ls_nameame = $contactLsName;
 
         return $this;
     }
@@ -196,7 +201,7 @@ class tab_contact
      */
     public function getContactLsName()
     {
-        return $this->contactLsName;
+        return $this->contact_ls_name;
     }
 
     /**
