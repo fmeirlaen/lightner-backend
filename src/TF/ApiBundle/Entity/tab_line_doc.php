@@ -23,8 +23,8 @@ class tab_line_doc
     private $stamptab_line_doc;
 
     /**
-     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_header_doc")
-     * @ORM\JoinColumn(name="stamptab_header_doc", referencedColumnName="stamptab_header_doc")
+     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_header_doc", inversedBy="lines", cascade={"persist"})
+     * @ORM\JoinColumn(name="stamptab_header_doc", referencedColumnName="stamptab_header_doc", nullable=false)
      */
     private $tab_header_doc;
 

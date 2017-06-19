@@ -14,13 +14,20 @@ Class DocApiController extends FOSRestController
      */
     public function postDocAction(Request $request)
     {
+
         $serializer = JMS::create()->build();
         $doc = $serializer->deserialize($request->getContent(), 'TF\ApiBundle\Entity\tab_header_doc', 'json');
-        $lines= $request->get('lines');
+
+        $lines= $doc->getLines();
+
+        //dump($doc);die;
+
         foreach ($lines as $line){
-            $l = $serializer->deserialize($line, 'TF\ApiBundle\Entity\tab_line_doc', 'json');
-            $doc->addLine($l);
+
+            $line->setTabHeaderDoc($doc);
+
         }
+//        dump($doc);die;
         $em = $this->getDoctrine()->getManager();
         $em->persist($doc);
         $em->flush();

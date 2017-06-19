@@ -3,6 +3,7 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Type as Type;
 
 /**
@@ -21,6 +22,16 @@ class tab_header_doc
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $stamptab_header_doc;
+
+
+    /**
+     *
+     * @Type("array<TF\ApiBundle\Entity\tab_line_doc>")
+     * @var array
+     * @ORM\OneToMany(targetEntity="TF\ApiBundle\Entity\tab_line_doc", mappedBy="tab_header_doc", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     */
+    private $lines;
 
     /**
      * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_contact")
@@ -497,6 +508,44 @@ class tab_header_doc
     public function getStamptabHeaderDoc()
     {
         return $this->stamptab_header_doc;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLines()
+    {
+        return $this->lines;
+    }
+
+
+    /**
+     * @param tab_line_doc $line
+     */
+    public function addLine(tab_line_doc $line){
+        $this->lines[] = $line;
+        $line->setTabHeaderDoc($this);
+    }
+
+    public function __construct()
+    {
+        $this->lines = array();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTabContact()
+    {
+        return $this->tab_contact;
+    }
+
+    /**
+     * @param mixed $tab_contact
+     */
+    public function setTabContact($tab_contact)
+    {
+        $this->tab_contact = $tab_contact;
     }
 }
 
