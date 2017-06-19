@@ -22,3 +22,14 @@ security:
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
+    providers:
+        api_key_user_provider:
+            id: AppBundle\Security\ApiKeyUserProvider
+
+    firewalls:
+        main:
+            pattern: ^/api
+            stateless: true
+            simple_preauth:
+                authenticator: AppBundle\Security\ApiKeyAuthenticator
+            provider: api_key_user_provider
