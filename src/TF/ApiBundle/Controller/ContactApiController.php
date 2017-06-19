@@ -16,16 +16,11 @@ class ContactApiController extends FOSRestController
      */
     public function postContactAction(Request $request)
     {
-        //dump($request->getContent());die;
         $serializer = JMS::create()->build();
         $contact = $serializer->deserialize($request->getContent(), 'TF\ApiBundle\Entity\tab_contact', 'json');
-//        dump($contact);die;
         $em = $this->getDoctrine()->getManager();
         $em->persist($contact);
         $em->flush();
-//        $contact = new tab_contact();
-//        $contact->setContactLsName($request->get('contact_ls_name'));
-//        dump($contact);die;
 
     }
 
