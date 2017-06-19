@@ -260,9 +260,9 @@ class LoadCountryData implements FixtureInterface
             array('ZM', 'Zambie', 'Zambia')
         );
         foreach ($Countries as $i => $Country) {
-            $newCountry = new Country();
-            $newCountry->setISO($Country[0]);
-            $newCountry->setName($Country[1]);
+            $newCountry = new tab_country();
+            $newCountry->setcountrycode($Country[0]);
+            $newCountry->setCountryName($Country[1]);
             $manager->persist($newCountry);
         }
         $manager->flush();
