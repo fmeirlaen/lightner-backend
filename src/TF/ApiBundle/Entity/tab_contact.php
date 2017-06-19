@@ -3,6 +3,7 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Type as Type;
 
 /**
@@ -22,13 +23,26 @@ class tab_contact
      */
     private $stamptab_contact;
 
+    /**
+     *
+     * @Type("int")
+     * @var int
+     */
+    private $country_id;
+
+
 
 
     /**
+     * @var int
+     *
+     * @Type("int")
+     *
      * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
      * @ORM\JoinColumn(name="stamptab_country", referencedColumnName="stamptab_country")
      */
     private $stamptab_country;
+
     /**
      * @var int
      *
@@ -434,6 +448,38 @@ class tab_contact
     public function getContactDateCreation()
     {
         return $this->contact_date_creation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCountryId()
+    {
+        return $this->country_id;
+    }
+
+    /**
+     * @param int $country_id
+     */
+    public function setCountryId($country_id)
+    {
+        $this->country_id = $country_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStamptabCountry()
+    {
+        return $this->stamptab_country;
+    }
+
+    /**
+     * @param int $stamptab_country
+     */
+    public function setStamptabCountry($stamptab_country)
+    {
+        $this->stamptab_country = $stamptab_country;
     }
 
 

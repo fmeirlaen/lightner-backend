@@ -18,7 +18,10 @@ class ContactApiController extends FOSRestController
     {
         $serializer = JMS::create()->build();
         $contact = $serializer->deserialize($request->getContent(), 'TF\ApiBundle\Entity\tab_contact', 'json');
+
         $em = $this->getDoctrine()->getManager();
+        $country = $this->getDoctrine()->getRepository("TFApiBundle:tab_country")->find($contact->getCountryId());
+        $contact->setStamptabCountry($country);
         $em->persist($contact);
         $em->flush();
 
