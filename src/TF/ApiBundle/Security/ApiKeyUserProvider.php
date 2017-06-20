@@ -19,7 +19,8 @@ class ApiKeyUserProvider implements UserProviderInterface
     {
         // Look up the username based on the token in the database, via
         // an API call, or do something entirely different
-        $username = getUserName();
+        $username = $this->;
+        $username = $userProvider->getUsernameForApiKey($apiKey);
 
         return $username;
     }
@@ -48,4 +49,6 @@ class ApiKeyUserProvider implements UserProviderInterface
     {
         return User::class === $class;
     }
+
+
 }
