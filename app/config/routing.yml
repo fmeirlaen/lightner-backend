@@ -2,4 +2,10 @@ tf_api:
     resource: "@TFApiBundle/Resources/config/routing.yml"
     prefix:   /api
 
+api_login_check:
+    path: /api/login_check
+
+api_logout:
+    path: /api/logout
+
 
