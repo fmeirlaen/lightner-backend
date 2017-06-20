@@ -34,7 +34,7 @@ class tab_contact
 
 
     /**
-     * @var int
+     * @var tab_country
      *
      * @Type("int")
      *
@@ -467,7 +467,7 @@ class tab_contact
     }
 
     /**
-     * @return int
+     * @return tab_country
      */
     public function getStamptabCountry()
     {
