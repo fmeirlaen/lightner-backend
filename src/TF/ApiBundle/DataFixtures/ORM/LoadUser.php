@@ -18,7 +18,7 @@ class LoadUserData implements FixtureInterface
         $Users = array(
             array('1', 'admin', 'admin', '/img/admin.jpg'),
             array('2', 'user', 'user', '/img/user.jpg'),
-            array('3', 'Khun', 'ly', 'img/khun.jpg')
+            array('3', 'Khun', 'ly', '/img/khun.jpg')
         );
         $contacts = $manager->getRepository('TFApiBundle:tab_contact');
 
