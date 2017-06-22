@@ -48,7 +48,14 @@ Class DocApiController extends FOSRestController
             'contact_country' => $repository->getContactCountry(),
             'doc_date' => $repository->getDocDate(),
             'doc_date_paid' => $repository->getDocDatePaid(),
-            'doc_reference' => $repository->getDocReference()
+            'doc_reference' => $repository->getDocReference(),
+            'doc_total' =>$repository->getDocTotal(),
+            'doc_paid' => $repository->getDocPaid(),
+            'doc_total_vat' => $repository->getDocTotalVat(),
+            'doc_number' => $repository->getDocNumber(),
+            'doc_year' => $repository->getDocYear(),
+            'doc_type' => $repository->getDocType(),
+            'contact_city' => $repository->getContactCity()
 
         );
     }
