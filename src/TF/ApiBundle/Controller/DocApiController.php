@@ -60,11 +60,15 @@ Class DocApiController extends FOSRestController
         );
     }
 
-    public function deleteDocAction()
+    public function deleteDocAction($stamptab_header_doc)
     {
-
+        $repository = $this->getDoctrine()->getManager()->getRepository('TF\ApiBundle\Entity\tab_header_doc')->find($stamptab_header_doc);
+        //delete le document qui correspond à l'id
+        $serializer = JMS::create()->build();
+        $serializer->serialize($repository, 'json');
     }
 
+    //Modification d'un document
     public function putDocAction()
     {
 
