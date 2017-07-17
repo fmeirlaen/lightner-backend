@@ -37,10 +37,10 @@ Class DocApiController extends FOSRestController
     public function getDocAction($stamptab_header_doc)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository('TF\ApiBundle\Entity\tab_header_doc')->find($stamptab_header_doc);
+        return $repository;
         //dump($repository);die;
         $serializer = JMS::create()->build();
         $serializer->serialize($repository, 'json');
-        //dump($serializer);die;
         return array(
             'contact_name' => $repository->getContactName(),
             'contact_address'=> $repository->getContactAddress(),
@@ -60,6 +60,10 @@ Class DocApiController extends FOSRestController
         );
     }
 
+    /*
+     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
+     * @Rest\Delete(path="/doc/{docID}", requirements={"docID" : "\d*"})
+     */
     public function deleteDocAction($stamptab_header_doc)
     {
         $repository = $this->getDoctrine()->getManager()->getRepository('TF\ApiBundle\Entity\tab_header_doc')->find($stamptab_header_doc);
