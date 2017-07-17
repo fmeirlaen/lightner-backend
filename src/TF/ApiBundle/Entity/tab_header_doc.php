@@ -3,7 +3,6 @@
 namespace TF\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Type as Type;
 
 /**
@@ -164,6 +163,7 @@ class tab_header_doc
      * @ORM\Column(name="contact_city", type="string", length=50, nullable=true)
      */
     private $contact_city;
+
 
 
     /**
