@@ -9,6 +9,7 @@
 namespace TF\ApiBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TF\ApiBundle\Entity\tab_contact;
@@ -28,7 +29,7 @@ class ContactType extends AbstractType {
         $builder->add('contact_vat_number');
         $builder->add('contact_amount');
         $builder->add('contact_tab_vat');
-        $builder->add('contact_date_creation');
+        $builder->add('contact_date_creation', DateTimeType::class, ['format' => 'dd-MM-yyyy', 'widget' => 'single_text']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

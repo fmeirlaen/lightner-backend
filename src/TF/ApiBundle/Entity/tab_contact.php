@@ -47,8 +47,7 @@ class tab_contact
      * @var int
      *
      * @Type("int")
-     *
-     * @ORM\Column(name="contact_number", type="integer", unique=true)
+     * @ORM\Column(name="contact_number", type="integer", unique=true, nullable=true)
      */
     private $contact_number;
 
