@@ -35,18 +35,10 @@ class tab_contact
     /**
      * @var tab_country
      *
-     * @Type("int")
-     *
      * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
      * @ORM\JoinColumn(name="stamptab_country", referencedColumnName="stamptab_country")
      */
     private $stamptab_country;
-
-    /**
-     * @var Country
-     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
-     */
-    private $contact_country;
 
 
     /**
