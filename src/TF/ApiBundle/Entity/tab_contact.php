@@ -5,6 +5,7 @@ namespace TF\ApiBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Type as Type;
+use Symfony\Component\Validator\Constraints\Country;
 
 /**
  * tab_contact
@@ -31,8 +32,6 @@ class tab_contact
     private $country_id;
 
 
-
-
     /**
      * @var tab_country
      *
@@ -42,6 +41,13 @@ class tab_contact
      * @ORM\JoinColumn(name="stamptab_country", referencedColumnName="stamptab_country")
      */
     private $stamptab_country;
+
+    /**
+     * @var Country
+     * @ORM\ManyToOne(targetEntity="TF\ApiBundle\Entity\tab_country")
+     */
+    private $contact_country;
+
 
     /**
      * @var int

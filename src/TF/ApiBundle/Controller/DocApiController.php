@@ -7,7 +7,6 @@ use FOS\RestBundle\View\View;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use JMS\Serializer\SerializerBuilder as JMS;
 use TF\ApiBundle\Entity\tab_header_doc;
 use TF\ApiBundle\Form\DocType;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,9 +32,10 @@ Class DocApiController extends FOSRestController
         }
         return $form;
     }
+
     /**
      * @Rest\View()
-     * @Rest\Get(path="/doc/{$stamptab_header_doc}")
+     * @Rest\Get(path="/doc/{stamptab_header_doc}")
      */
     public function getDocAction($stamptab_header_doc)
     {

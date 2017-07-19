@@ -34,12 +34,23 @@ class ContactApiController extends FOSRestController
 
     /**
      * @Rest\View()
-     * @Rest\Get(path="/contact/{$stamptab_contact}")
+     * @Rest\Get(path="/contact/{stamptab_contact}")
      */
     public function getContactAction($stamptab_contact)
     {
-        $contact = $this->getDoctrine()->getManager()->getRepository('TFApiBundle:tab_contact')->find($stamptab_contact);
+        $contact = $this->getDoctrine()->getRepository('TFApiBundle:tab_contact')->find($stamptab_contact);
         return $contact;
+    }
+
+    /**
+     * @return array
+     * @Rest\View()
+     * @Rest\Get(path="/contacts")
+     */
+    public function getContactsAction()
+    {
+        $contacts = $this->getDoctrine()->getRepository('TFApiBundle:tab_contact')->findAll();
+        return $contacts;
     }
 
     public function deleteContactAction($stamptab_contact)
