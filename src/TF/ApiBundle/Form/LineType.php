@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TF\ApiBundle\Entity\tab_line_doc;
 
-class DocType extends AbstractType {
+class LineType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('line_date', DateTimeType::class, ['format' => 'dd-MM-yyyy', 'widget' => 'single_text']);

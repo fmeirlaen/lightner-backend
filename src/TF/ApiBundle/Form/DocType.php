@@ -9,6 +9,7 @@
 namespace TF\ApiBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,6 +33,11 @@ class DocType extends AbstractType
         $builder->add('doc_year');
         $builder->add('doc_type');
         $builder->add('contact_city');
+        $builder->add('lines', CollectionType::class, array(
+            'entry_type' => LineType::class,
+            'allow_add' => 'true',
+            'allow_delete' => 'true'
+        ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

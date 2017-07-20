@@ -25,7 +25,6 @@ class tab_header_doc
 
     /**
      *
-     * @Type("array<TF\ApiBundle\Entity\tab_line_doc>")
      * @var array
      * @ORM\OneToMany(targetEntity="TF\ApiBundle\Entity\tab_line_doc", mappedBy="tab_header_doc", cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="CASCADE")
@@ -163,8 +162,23 @@ class tab_header_doc
      * @ORM\Column(name="contact_city", type="string", length=50, nullable=true)
      */
     private $contact_city;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lines = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
-
+    /**
+     * Get stamptabHeaderDoc
+     *
+     * @return integer
+     */
+    public function getStamptabHeaderDoc()
+    {
+        return $this->stamptab_header_doc;
+    }
 
     /**
      * Set contactName
@@ -375,7 +389,7 @@ class tab_header_doc
     /**
      * Get docPaid
      *
-     * @return bool
+     * @return boolean
      */
     public function getDocPaid()
     {
@@ -423,7 +437,7 @@ class tab_header_doc
     /**
      * Get docNumber
      *
-     * @return int
+     * @return integer
      */
     public function getDocNumber()
     {
@@ -447,7 +461,7 @@ class tab_header_doc
     /**
      * Get docYear
      *
-     * @return int
+     * @return integer
      */
     public function getDocYear()
     {
@@ -503,49 +517,60 @@ class tab_header_doc
     }
 
     /**
-     * @return int
+     * Add line
+     *
+     * @param \TF\ApiBundle\Entity\tab_line_doc $line
+     *
+     * @return tab_header_doc
      */
-    public function getStamptabHeaderDoc()
+    public function addLine(\TF\ApiBundle\Entity\tab_line_doc $line)
     {
-        return $this->stamptab_header_doc;
+        $this->lines[] = $line;
+
+        return $this;
     }
 
     /**
-     * @return array
+     * Remove line
+     *
+     * @param \TF\ApiBundle\Entity\tab_line_doc $line
+     */
+    public function removeLine(\TF\ApiBundle\Entity\tab_line_doc $line)
+    {
+        $this->lines->removeElement($line);
+    }
+
+    /**
+     * Get lines
+     *
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLines()
     {
         return $this->lines;
     }
 
-
     /**
-     * @param tab_line_doc $line
+     * Set tabContact
+     *
+     * @param \TF\ApiBundle\Entity\tab_contact $tabContact
+     *
+     * @return tab_header_doc
      */
-    public function addLine(tab_line_doc $line){
-        $this->lines[] = $line;
-        $line->setTabHeaderDoc($this);
-    }
-
-    public function __construct()
+    public function setTabContact(\TF\ApiBundle\Entity\tab_contact $tabContact = null)
     {
-        $this->lines = array();
+        $this->tab_contact = $tabContact;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * Get tabContact
+     *
+     * @return \TF\ApiBundle\Entity\tab_contact
      */
     public function getTabContact()
     {
         return $this->tab_contact;
     }
-
-    /**
-     * @param mixed $tab_contact
-     */
-    public function setTabContact($tab_contact)
-    {
-        $this->tab_contact = $tab_contact;
-    }
 }
-

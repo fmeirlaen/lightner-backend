@@ -8,6 +8,7 @@ use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use TF\ApiBundle\Entity\tab_header_doc;
+use TF\ApiBundle\Entity\tab_line_doc;
 use TF\ApiBundle\Form\DocType;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -23,8 +24,14 @@ Class DocApiController extends FOSRestController
         $form = $this->createForm(DocType::class, $doc);
         $form->submit($request->request->all());
 
-        if ($form->isValid() && $form->isSubmitted())
+        if ($form->isSubmitted() && $form->isValid())
         {
+            /** @var tab_line_doc $line */
+            foreach ($doc->getLines() as $line) {
+                $line->setTabHeaderDoc($doc);
+            }
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($doc);
             $em->flush();
