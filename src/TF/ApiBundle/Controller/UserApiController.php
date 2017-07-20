@@ -10,6 +10,7 @@
  {
      /**
       * @Rest\View()
+      * @Rest\Get(path="/user")
       */
     public function getUsersAction()
     {

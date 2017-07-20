@@ -8,6 +8,7 @@
 
 namespace TF\ApiBundle\Form;
 
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +20,7 @@ class ContactType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('contact_number');
-        $builder->add('contact_fs_name');
+        $builder->add('contact_fs_name', TextType::class);
         $builder->add('contact_ls_name');
         $builder->add('contact_comercial_name');
         $builder->add('contact_address');
