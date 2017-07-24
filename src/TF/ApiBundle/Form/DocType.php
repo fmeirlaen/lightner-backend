@@ -8,12 +8,12 @@
 
 namespace TF\ApiBundle\Form;
 
-use Doctrine\DBAL\Types\BooleanType;
-use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use TF\ApiBundle\Entity\tab_header_doc;
@@ -30,7 +30,7 @@ class DocType extends AbstractType
         $builder->add('doc_date_paid', DateTimeType::class, ['format' => 'dd-MM-yyyy', 'widget' => 'single_text']);
         $builder->add('doc_reference', TextType::class);
         $builder->add('doc_total', NumberType::class);
-        $builder->add('doc_paid', BooleanType::class);
+        $builder->add('doc_paid', CheckboxType::class);
         $builder->add('doc_total_vat', NumberType::class);
         $builder->add('doc_number', NumberType::class);
         $builder->add('doc_year', NumberType::class);
